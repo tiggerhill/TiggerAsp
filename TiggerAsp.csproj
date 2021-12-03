@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-TiggerAsp-422D4524-DFDC-4877-ABE1-099624800A8A</UserSecretsId>
+    <ApplicationIcon />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200302031220_AddEventTable.cs" />
+    <Compile Remove="Data\Migrations\20200302031220_AddEventTable.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200304064325_CommentsAndMembers.cs" />
+    <Compile Remove="Data\Migrations\20200304064325_CommentsAndMembers.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200304064548_CommentsAndMembers.cs" />
+    <Compile Remove="Data\Migrations\20200304064548_CommentsAndMembers.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200304064739_CommentsAndMembers.cs" />
+    <Compile Remove="Data\Migrations\20200304064739_CommentsAndMembers.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200304165525_CommentsMembers.cs" />
+    <Compile Remove="Data\Migrations\20200304165525_CommentsMembers.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200304170233_CommentsMembers.cs" />
+    <Compile Remove="Data\Migrations\20200304170233_CommentsMembers.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200304173954_tweaks.cs" />
+    <Compile Remove="Data\Migrations\20200304173954_tweaks.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200311165304_AddIdentityTables.cs" />
+    <Compile Remove="Data\Migrations\20200311165304_AddIdentityTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200311170018_AddIdentityTables.cs" />
+    <Compile Remove="Data\Migrations\20200311170018_AddIdentityTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200311170257_AddIdentityTables.cs" />
+    <Compile Remove="Data\Migrations\20200311170257_AddIdentityTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200316024316_AddMorePhotos.cs" />
+    <Compile Remove="Data\Migrations\20200316024316_AddMorePhotos.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+
+</Project>

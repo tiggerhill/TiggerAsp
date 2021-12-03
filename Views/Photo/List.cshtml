@@ -1,0 +1,73 @@
+﻿@model List<Photo>
+@{
+    ViewBag.Title = "Photo List";
+}
+
+@*Filter Form*@
+@*<form asp-action="Filter" method="post" class="form-inline">
+    <label>Event: </label>
+    <select name="filter" class="form-control m-2"
+            asp-items="@(new SelectList(
+            Models.Occasions, "OccasionId", "OccasionName", current.OccasionFilter))">
+        <option value="@"
+    </select>
+
+
+</form>*@
+
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="list-group">
+            <h1 class="text-center">Photos</h1>
+            <h5 class="text-center">Select by Occasion</h5>            
+
+            @foreach (Occasion o in ViewBag.Occasions)
+            {
+                <a asp-controller="Photo" asp-action="List" asp-route-id="@o.OccasionName"
+                   class="list-group-item
+                       @(ViewBag.SelectedOccasionName == o.OccasionName)">
+                    @o.OccasionName
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="col-sm-9">
+
+        @*@Occasion o in ViewBag.Occasions = "EH";
+        <a asp-controller="Photo" asp-action="ShowOccasionInfo"
+            class="h1 @(ViewBag.SelectedOccasionName == o.OccasionName)">
+            @o.OccasionName
+        </a>*@
+
+        <h2>
+            @*@o.OccasionName*@
+        </h2>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>                
+                @foreach (var photo in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="~/images/@photo.FileName"
+                                 alt="Family Photo"
+                                 class="img-fluid center-block img-thumbnail" />
+                            @*<h5 class="text-center">@photo.Description</h5>
+                            <a class="text-right" asp-controller="Photo" asp-action="Edit"
+                               asp-route-id="@photo.PhotoId"
+                               asp-route-slug="@photo.Slug">Edit Description</a>*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

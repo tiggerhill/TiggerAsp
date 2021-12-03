@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@{
+    // use current controller or area to determine if tab is active
+    var current = ViewContext.RouteData.Values["area"]?.ToString() ??
+        ViewContext.RouteData.Values["controller"]?.ToString();
+}
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        // signed-in user
+        <li class="nav-item">
+            <form method="post" asp-action="Logout" asp-controller="Account"
+                  asp-area="">
+                <input type="submit" value="Log Out @User.Identity.Name"
+                       class="btn btn-outline-dark" />
+            </form>
+        </li>
+    }
+    else
+    {
+        // get current action
+        var action = ViewContext.RouteData.Values["action"]?.ToString();
+
+        // anonymous user
+        <li class="nav-item @Nav.Active("Register", action)">
+            <a asp-action="" asp-controller=""
+               asp-area="" class="nav-link text-dark">Register</a>
+        </li>
+        <li class="nav-item">
+            <a asp-action="Login" asp-controller="Account"
+               asp-area="" class="nav-link text-dark">Log In</a>
+        </li>
+    }
+
+    <li class="nav-item @Nav.Active("Admin", current)">
+        <a class="nav-link text-dark" asp-action="Index" asp-controller="" asp-area="">
+            <span class="fas fa-cog"></span>&nbsp;Admin
+        </a>
+
+</ul>
